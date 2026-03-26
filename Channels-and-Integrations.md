@@ -9,8 +9,8 @@
 - 相关仓库：
   - `/opt/ai-stack/nanobot-telegram-planbridge`
   - `/opt/ai-stack/codex-listener`
-- 相关支撑：
-  - `xray-client-telegram.service`
+- 当前已验证 Telegram 裸连可用，主链路不再依赖本地 SOCKS 代理
+- `xray-client-telegram.service` 仅作为回滚备用件保留
 
 ## Weixin
 

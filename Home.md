@@ -15,6 +15,7 @@
 - 每日天气：`06:30`，Telegram + Weixin 双发
 - 长期记忆：已启用 semantic memory（Mem0 / NIM embeddings）
 - Node 运行时：默认 `/usr/local/bin/node`，版本线为 Node 22
+- Telegram 当前已验证可裸连，不再依赖本地 Xray SOCKS 代理
 
 ## 先看哪里
 
@@ -33,7 +34,6 @@
 - `codex-listener.service`
 - `daily-digest.service` / `daily-digest.timer`
 - `hera-skills-backup.service` / `hera-skills-backup.timer`
-- `xray-client-telegram.service`
 
 ## 当前维护边界
 

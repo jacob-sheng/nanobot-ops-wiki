@@ -10,8 +10,7 @@ systemctl is-active \
   nanobot-weixin-bridge.service \
   codex-listener.service \
   daily-digest.timer \
-  hera-skills-backup.timer \
-  xray-client-telegram.service
+  hera-skills-backup.timer
 ```
 
 正常预期：
@@ -21,7 +20,6 @@ systemctl is-active \
 - `codex-listener.service`: `active`
 - `daily-digest.timer`: `active`
 - `hera-skills-backup.timer`: `active`
-- `xray-client-telegram.service`: `active`
 
 ## 2. 再看最关键的日志
 
@@ -79,6 +77,7 @@ sudo -u Hera -H /opt/ai-stack/nanobot/.venv/bin/python \
 - 默认聊天模型：`ollama/kimi-k2.5`
 - 主 provider：AxonHub custom
 - Telegram 当前走 `telegram_planbridge`
+- Telegram 当前已验证裸连可用，不再依赖 `xray-client-telegram.service`
 - Weixin 当前已启用，本地 bridge 已对齐腾讯官方图片入站协议
 - `daily-digest` 当前 `06:30` 发送，Telegram + Weixin 双发
 - `gws` 已接入 Gmail / Drive / Calendar

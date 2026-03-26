@@ -32,7 +32,8 @@
 - `/opt/ai-stack` 下的源码仓会按锁定 commit 恢复
 - Weixin bridge 会从恢复后的 `nanobot` 源码本地重建
 - `weixin-auth`、`gws`、`toot` 这些 auth state 会恢复，但如果上游 token 失效，仍可能要求重新授权
-- `xray-client-telegram.service` 和 `/usr/local/etc/xray/client-telegram.json` 会恢复；若 `/usr/local/bin/xray` 缺失，restore 会先重新安装 `xray`
+- Telegram 当前按直连恢复，不默认启用 `xray-client-telegram.service`
+- `xray-client-telegram.service` 和 `/usr/local/etc/xray/client-telegram.json` 仅保留作回滚材料；若未来明确恢复代理路径，再重新安装 `/usr/local/bin/xray` 并启用该服务
 - `MEMORY.md` 不是主长期记忆来源；长期记忆以导出的 Mem0 为主
 
 ## 当前恢复入口
