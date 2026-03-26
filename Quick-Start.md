@@ -83,6 +83,10 @@ sudo -u Hera -H /opt/ai-stack/nanobot/.venv/bin/python \
 - `gws` 已接入 Gmail / Drive / Calendar
 - `summarize` 已接入 AxonHub 的 OpenAI-compatible 路径
 - `mastodon` 已接入，支持读时间线、关注、点赞、收藏
+- 当前还有一条 `mastodon_daily_share` 定时任务：
+  - `08:00-20:00 Asia/Shanghai` 内随机一次
+  - 发到 Telegram 私聊
+  - `sendProgress=false`，所以只会看到最终分享，不会看到执行过程
 
 ## 6. 恢复入口
 

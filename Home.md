@@ -13,6 +13,7 @@
 - Telegram：走 `telegram_planbridge`，不是内置 Telegram channel
 - Weixin：已启用，走本地 bridge + `nanobot-weixin-bridge.service`
 - 每日天气：`06:30`，Telegram + Weixin 双发
+- Mastodon 随机分享：每天 `08:00-20:00` 之间随机一次，Telegram 私聊静默执行
 - 长期记忆：已启用 semantic memory（Mem0 / NIM embeddings）
 - Node 运行时：默认 `/usr/local/bin/node`，版本线为 Node 22
 - Telegram 当前已验证可裸连，不再依赖本地 Xray SOCKS 代理

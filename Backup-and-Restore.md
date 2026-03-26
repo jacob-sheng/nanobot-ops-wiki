@@ -19,12 +19,16 @@
 - `~/.config/toot/`
 - `~/.summarize/`
 - 本地运维脚本与 systemd unit
+- workspace cron store：`~/.nanobot/workspace/cron/jobs.json`
+- workspace 服务状态，例如：
+  - `~/.nanobot/workspace/services/mastodon-daily-share/state.json`
 
 ## 不覆盖什么
 
 - `~/.nanobot/bridge/` 运行产物
 - append 式本地日志
 - 临时缓存和可重建 node_modules / pycache
+- 旧的 `~/.nanobot/cron/` legacy 路径
 
 ## 恢复语义
 
@@ -35,6 +39,10 @@
 - Telegram 当前按直连恢复，不默认启用 `xray-client-telegram.service`
 - `xray-client-telegram.service` 和 `/usr/local/etc/xray/client-telegram.json` 仅保留作回滚材料；若未来明确恢复代理路径，再重新安装 `/usr/local/bin/xray` 并启用该服务
 - `MEMORY.md` 不是主长期记忆来源；长期记忆以导出的 Mem0 为主
+- 当前 `mastodon_daily_share` 任务会随着 workspace overlay 一起恢复：
+  - cron store 在 `workspace/cron/jobs.json`
+  - 去重状态在 `services/mastodon-daily-share/state.json`
+  - helper skill 来自 `skills/mastodon-daily-share/`
 
 ## 当前恢复入口
 

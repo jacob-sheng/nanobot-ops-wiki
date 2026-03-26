@@ -52,6 +52,11 @@
   - 私信
   - 删除
   - 批量运营
+- 当前还启用了一条 `mastodon_daily_share` 后台任务：
+  - 每天 `08:00-20:00 Asia/Shanghai` 随机一次
+  - 通过 Mastodon 首页时间线挑值得看的内容
+  - 直接发到 Telegram 私聊
+  - `sendProgress=false`，只发最终分享，不外发过程播报
 
 ## summarize
 

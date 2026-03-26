@@ -36,6 +36,18 @@
 
 ## 定时任务
 
+### workspace cron: `mastodon_daily_share`
+
+- live store: `~/.nanobot/workspace/cron/jobs.json`
+- 调度：`daily_random`
+- 时间窗：`08:00-20:00 Asia/Shanghai`
+- 行为：
+  - 读取 Mastodon 首页时间线
+  - 仅在发现真正值得分享的内容时，发到 Telegram 私聊
+  - `sendProgress=false`，所以不会把执行步骤外发到聊天渠道
+- 去重状态：
+  - `~/.nanobot/workspace/services/mastodon-daily-share/state.json`
+
 ### `daily-digest.timer`
 
 - 每天 `06:30`
