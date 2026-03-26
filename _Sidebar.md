@@ -1,10 +1,10 @@
 ## Wiki
 
-- [[Home]]
-- [[Quick-Start]]
-- [[Service-Map]]
-- [[Config-and-Secrets]]
-- [[Channels-and-Integrations]]
-- [[Backup-and-Restore]]
-- [[Upgrade-and-Rollback]]
-- [[Weixin-Runbook]]
+- [Home](Home.md)
+- [Quick Start](Quick-Start.md)
+- [Service Map](Service-Map.md)
+- [Config and Secrets](Config-and-Secrets.md)
+- [Channels and Integrations](Channels-and-Integrations.md)
+- [Backup and Restore](Backup-and-Restore.md)
+- [Upgrade and Rollback](Upgrade-and-Rollback.md)
+- [Weixin Runbook](Weixin-Runbook.md)

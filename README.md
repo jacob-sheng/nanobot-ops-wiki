@@ -1,8 +1,8 @@
 # nanobot-ops-wiki
 
-Public operations wiki for Hera's `nanobot` environment.
+公开的 `nanobot` 运维文档仓库，用来承载这台机器的 AI 运行面说明、快速开始、排障和恢复文档。
 
-## Start Here
+## 入口
 
 - [Home](Home.md)
 - [Quick Start](Quick-Start.md)
@@ -13,8 +13,8 @@ Public operations wiki for Hera's `nanobot` environment.
 - [Upgrade and Rollback](Upgrade-and-Rollback.md)
 - [Weixin Runbook](Weixin-Runbook.md)
 
-## Notes
+## 当前原则
 
-- This repo is intended for readable operational documentation.
-- It must not contain secret values.
-- The private backup-and-restore baseline remains in `jacob-sheng/nanobot-workspace-skills`.
+- 这里放可公开的运维说明，不放任何 secret 真值。
+- 真正的私有恢复基线仍在 `jacob-sheng/nanobot-workspace-skills`。
+- 文档内容要和现网保持同步，避免把过时说明继续留在仓库首页。
