@@ -30,6 +30,9 @@
   - NVIDIA NIM embeddings key
 - `/etc/default/nanobot`
   - 运行时环境变量入口，实际让 systemd 服务拿到 provider key 等配置
+- `/usr/local/etc/xray/client-telegram.json`
+  - `xray-client-telegram.service` 的配置文件
+  - 会被正式快照；二进制 `/usr/local/bin/xray` 本体不进 GitHub 备份
 
 ## 运行时与数据路径
 

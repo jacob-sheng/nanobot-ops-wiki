@@ -50,17 +50,16 @@
 - 触发私有快照脚本
 - 负责把 workspace、overlay、weixin-auth、gws、summarize、Mem0 导出等内容推到私有备份仓
 
-### `nanobot-update-backups-prune.timer`
-
-- 每天运行
-- 清理本机历史更新备份，只保留最近几份
-
 ## 相关支撑服务
 
 ### `xray-client-telegram.service`
 
 - Telegram 相关网络支撑服务
 - 不直接承担 bot 逻辑，但当前链路里属于实际依赖
+- 正式备份的是：
+  - `xray-client-telegram.service`
+  - `/usr/local/etc/xray/client-telegram.json`
+- `xray` 二进制本体不是快照内容；restore 时若缺失，会先重新安装再启用该服务
 
 ## 当前关键仓库
 

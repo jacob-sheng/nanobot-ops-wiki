@@ -11,7 +11,6 @@ systemctl is-active \
   codex-listener.service \
   daily-digest.timer \
   hera-skills-backup.timer \
-  nanobot-update-backups-prune.timer \
   xray-client-telegram.service
 ```
 
@@ -22,7 +21,6 @@ systemctl is-active \
 - `codex-listener.service`: `active`
 - `daily-digest.timer`: `active`
 - `hera-skills-backup.timer`: `active`
-- `nanobot-update-backups-prune.timer`: `active`
 - `xray-client-telegram.service`: `active`
 
 ## 2. 再看最关键的日志

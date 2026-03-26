@@ -33,7 +33,6 @@
 - `codex-listener.service`
 - `daily-digest.service` / `daily-digest.timer`
 - `hera-skills-backup.service` / `hera-skills-backup.timer`
-- `nanobot-update-backups-prune.service` / `nanobot-update-backups-prune.timer`
 - `xray-client-telegram.service`
 
 ## 当前维护边界
