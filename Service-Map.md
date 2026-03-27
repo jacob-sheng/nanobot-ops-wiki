@@ -43,10 +43,24 @@
 - 时间窗：`08:00-20:00 Asia/Shanghai`
 - 行为：
   - 读取 Mastodon 首页时间线
-  - 仅在发现真正值得分享的内容时，发到 Telegram 私聊
+  - 仅在发现真正值得分享的内容时，主发 Telegram 私聊，并镜像同文案到 Weixin
   - `sendProgress=false`，所以不会把执行步骤外发到聊天渠道
 - 去重状态：
   - `~/.nanobot/workspace/services/mastodon-daily-share/state.json`
+
+### workspace cron: `bilibili_daily_share`
+
+- live store: `~/.nanobot/workspace/cron/jobs.json`
+- 调度：`daily_random`
+- 时间窗：`08:00-20:00 Asia/Shanghai`
+- 行为：
+  - 读取登录态 Bilibili 首页推荐
+  - 仅在发现真正值得分享的内容时，主发 Telegram 私聊，并镜像同文案到 Weixin
+  - `sendProgress=false`，所以不会把执行步骤外发到聊天渠道
+  - 登录失效时不分享内容，只发一条 Telegram 登录提醒
+- 去重与状态：
+  - `~/.nanobot/workspace/services/bilibili-daily-share/state.json`
+  - `~/.nanobot/workspace/services/bilibili-daily-share/last_prepare.json` 仅作为短期 callback 缓存使用，不属于长期备份真相面
 
 ### `daily-digest.timer`
 
@@ -60,7 +74,7 @@
 
 - 每 3 天跑一次
 - 触发私有快照脚本
-- 负责把 workspace、overlay、weixin-auth、gws、summarize、Mem0 导出等内容推到私有备份仓
+- 负责把 workspace、overlay、weixin-auth、bilibili-auth、gws、summarize、Mem0 导出等内容推到私有备份仓
 
 ## 相关支撑服务
 

@@ -26,6 +26,7 @@
   - `image_item.aeskey` / `image_item.media.aes_key`
   - CDN 下载 + 解密
 - 当前 daily digest 会把天气同步广播到 `channels.weixin.allowFrom`
+- 当前 `mastodon_daily_share` 和 `bilibili_daily_share` 也会把最终分享文本镜像到 `channels.weixin.allowFrom`
 
 ## Google Workspace
 
@@ -55,8 +56,25 @@
 - 当前还启用了一条 `mastodon_daily_share` 后台任务：
   - 每天 `08:00-20:00 Asia/Shanghai` 随机一次
   - 通过 Mastodon 首页时间线挑值得看的内容
-  - 直接发到 Telegram 私聊
+  - 主发 Telegram 私聊，并镜像同文案到 Weixin
   - `sendProgress=false`，只发最终分享，不外发过程播报
+
+## Bilibili
+
+- 当前通过独立的 workspace helper 接入，不是聊天 channel
+- 关键路径：
+  - `~/.nanobot/workspace/skills/bilibili-daily-share/`
+  - `~/.nanobot/workspace/services/bilibili-daily-share/state.json`
+  - `~/.nanobot/bilibili-auth/`
+  - `~/.nanobot/bin/auth_bilibili.sh`
+  - 私有恢复仓 `skills/bilibili-daily-share/requirements-bilibili-cli.lock.txt`
+- 当前启用了一条 `bilibili_daily_share` 后台任务：
+  - 每天 `08:00-20:00 Asia/Shanghai` 随机一次
+  - 读取登录态首页推荐，不用 public 热榜
+  - 主发 Telegram 私聊，并镜像同文案到 Weixin
+  - `sendProgress=false`，只发最终分享，不外发过程播报
+  - 登录失效时不分享内容，只发一条 Telegram 登录提醒，24 小时内不重复
+  - helper venv 按 lockfile 重建，并固定要求 `httpx` backend；`auth_bilibili.sh` 会在 venv 缺依赖时自动自修复
 
 ## summarize
 

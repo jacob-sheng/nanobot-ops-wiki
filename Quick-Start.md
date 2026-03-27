@@ -60,6 +60,7 @@ sudo -u Hera -H /opt/ai-stack/nanobot/.venv/bin/python \
 /opt/ai-stack/nanobot-telegram-planbridge
 /home/Hera/.nanobot/config.json
 /home/Hera/.nanobot/workspace
+/home/Hera/.nanobot/bilibili-auth
 /home/Hera/.nanobot/weixin-auth
 /home/Hera/.config/gws
 /home/Hera/.summarize
@@ -83,10 +84,14 @@ sudo -u Hera -H /opt/ai-stack/nanobot/.venv/bin/python \
 - `gws` 已接入 Gmail / Drive / Calendar
 - `summarize` 已接入 AxonHub 的 OpenAI-compatible 路径
 - `mastodon` 已接入，支持读时间线、关注、点赞、收藏
-- 当前还有一条 `mastodon_daily_share` 定时任务：
-  - `08:00-20:00 Asia/Shanghai` 内随机一次
-  - 发到 Telegram 私聊
-  - `sendProgress=false`，所以只会看到最终分享，不会看到执行过程
+- 当前还有两条随机社交分享任务：
+  - `mastodon_daily_share`
+  - `bilibili_daily_share`
+  - 两者都在 `08:00-20:00 Asia/Shanghai` 内随机一次
+  - 两者都主发 Telegram，并镜像到 Weixin
+  - 两者都 `sendProgress=false`，所以只会看到最终分享，不会看到执行过程
+  - Bilibili 依赖登录态首页推荐；登录失效时只发 Telegram 登录提醒
+  - Bilibili helper venv 按 `skills/bilibili-daily-share/requirements-bilibili-cli.lock.txt` 重建，并固定要求 `httpx`
 
 ## 6. 恢复入口
 
