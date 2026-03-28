@@ -47,6 +47,10 @@
   - `sendProgress=false`，所以不会把执行步骤外发到聊天渠道
 - 去重状态：
   - `~/.nanobot/workspace/services/mastodon-daily-share/state.json`
+  - `~/.nanobot/workspace/services/mastodon-daily-share/last_prepare.json` 仅作为短期 callback 缓存使用，不属于长期备份真相面
+- mark-shared 回调匹配逻辑：
+  - 从 `last_prepare.json` 缓存读取候选列表（不重新拉时间线，避免竞态）
+  - 匹配策略：response URL 与候选 status URL 或候选帖文中的外部链接取交集
 
 ### workspace cron: `bilibili_daily_share`
 
